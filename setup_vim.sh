@@ -34,10 +34,11 @@ fi
 
 # Install silver searcher
 if ! type ag > /dev/null; then 
-  echo "Silver Searcher - installing"
+  echo "Silver Searcher - installing w/ dependencies"
+  sudo apt-get install -y automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev
   tmp_ag_path=$tmp_path"ag"
   git clone https://github.com/ggreer/the_silver_searcher $tmp_ag_path
-  (cd ag && ./build.sh && sudo make install)
+  (cd $tmp_ag_path && pwd && $(pwd)/build.sh && sudo make install)
   rm -rf $tmp_ag_path
   echo "Silver Searcher - done"
 fi
