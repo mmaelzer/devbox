@@ -1,9 +1,12 @@
 execute pathogen#infect()
 syntax enable
 set term=xterm-256color
-colorscheme vividchalk
+colorscheme monokai
 filetype plugin indent on
 set enc=utf-8
+
+highlight clear SignColumn          " Fix vim-gitgutter background
+let g:ctrlp_show_hidden = 1         " Let ctrlp see hidden files
 
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 set autoindent

@@ -5,23 +5,28 @@ tmp_path="$HOME/tmp/"
 mkdir -p $bundle_path
 mkdir -p $tmp_path
 
-# Copy over .vimrc
-curr_vimrc=$HOME/.vimrc
-bak_vimrc=$HOME/.vimrc_bak
-if [ -e $curr_vimrc ]; then
-  echo "Backing up $curr_vimrc to $bak_vimrc"
-  mv $curr_vimrc $bak_vimrc
+if [ $1 == "all" ]; then
+    # Copy over .vimrc
+    curr_vimrc=$HOME/.vimrc
+    bak_vimrc=$HOME/.vimrc_bak
+    if [ -e $curr_vimrc ]; then
+      echo "Backing up $curr_vimrc to $bak_vimrc"
+      mv $curr_vimrc $bak_vimrc
+    fi
+    ln -s $(pwd)/.vimrc $HOME/.vimrc
 fi
-cp $(pwd)/.vimrc $HOME
 
 # Associative array of vim bundles
 declare -A vim_bundles=(
   ["ag"]="/rking/ag.vim"
   ["nerdtree"]="/scrooloose/nerdtree.git"
-  ["vim-colors-solarized"]="/altercation/vim-colors-solarized.git"
   ["vim-javascript"]="/pangloss/vim-javascript.git"
   ["vim-go"]="/fatih/vim-go.git"
   ["ctrlp"]="/kien/ctrlp.vim.git"
+  ["vim-gitgutter"]="/airblade/vim-gitgutter"
+  ["vim-airline"]="/bling/vim-airline"
+  ["vim-syntastic"]="/scrooloose/syntastic"
+  ["vim-monokai"]="/sickill/vim-monokai"
 )
 
 # Install vim pathogen
