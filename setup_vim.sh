@@ -27,6 +27,7 @@ declare -A vim_bundles=(
   ["vim-airline"]="/bling/vim-airline"
   ["vim-syntastic"]="/scrooloose/syntastic"
   ["vim-monokai"]="/sickill/vim-monokai"
+  ["MatchTag"]="/gregsexton/MatchTag"
 )
 
 # Install vim pathogen
