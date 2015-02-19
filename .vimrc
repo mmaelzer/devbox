@@ -8,6 +8,10 @@ set enc=utf-8
 highlight clear SignColumn          " Fix vim-gitgutter background
 let g:ctrlp_show_hidden = 1         " Let ctrlp see hidden files
 au BufNewFile,BufRead *.ejs set filetype=html " Use html syntax highlighting for .ejs files
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](node_modules|env|htmlcov)$',
+  \ 'file': '\v\.(pyc)$',
+  \ }
 
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 set autoindent
