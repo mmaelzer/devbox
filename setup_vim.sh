@@ -5,7 +5,7 @@ tmp_path="$HOME/tmp/"
 mkdir -p $bundle_path
 mkdir -p $tmp_path
 
-if [ $1 == "all" ]; then
+if [ "$1" == "all" ]; then
     # Copy over .vimrc
     curr_vimrc=$HOME/.vimrc
     bak_vimrc=$HOME/.vimrc_bak
