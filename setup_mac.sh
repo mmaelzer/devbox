@@ -1,7 +1,7 @@
 # Install brew
 command -v brew > /dev/null 2>&1 || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-# Install eask
+# Install cask
 brew install caskroom/cask/brew-cask 2> /dev/null
 
 # Install oh-my-zsh
@@ -25,3 +25,18 @@ brew install the_silver_searcher 2> /dev/null
 
 # Install fuzzy finder
 brew install fzf 2> /dev/null
+
+# Install golang
+brew install go 2> /dev/null
+
+# Install gitx
+brew cask install gitx 2> /dev/null
+
+# Install mysql
+brew install mysql 2> /dev/null
+
+# Start mysql
+mysql.server start
+
+# Install redis
+brew install redis 2> /dev/null
