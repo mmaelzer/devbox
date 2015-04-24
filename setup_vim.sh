@@ -29,6 +29,8 @@ declare -A vim_bundles=(
   ["vim-monokai"]="/crusoexia/vim-monokai"
   ["MatchTag"]="/gregsexton/MatchTag"
   ["vim-commentary"]="/tpope/vim-commentary"
+  ["editorconfig-vim"]="/editorconfig/editorconfig-vim"
+  ["vim-less"]="/groenewege/vim-less"
 )
 
 # Install vim pathogen

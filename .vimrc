@@ -5,26 +5,29 @@ colorscheme monokai
 filetype plugin indent on
 set enc=utf-8
 
+let mapleader = ','
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
 highlight clear SignColumn          " Fix vim-gitgutter background
 let g:ctrlp_show_hidden = 1         " Let ctrlp see hidden files
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](node_modules|.git|env|htmlcov)$',
   \ 'file': '\v\.(pyc)$',
   \ }
+let g:syntastic_javascript_checkers = ['jshint', 'jscs']
 map <leader>f :CtrlP .<cr>
 map <leader>F :CtrlP %%<cr>
 map <leader>fp :call CtrlpProject()<cr>
 map <leader>fm :call CtrlpProject('models')<cr>
 
-
-let mapleader = ','
-
 au BufNewFile,BufRead *.ejs set filetype=html " Use html syntax highlighting for .ejs files
 
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+"set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+"autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 autocmd Filetype rst setlocal ts=2 sts=2 sw=2
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 
 set autoindent
 set cursorline                      " Highlight the current line
@@ -37,6 +40,7 @@ set nowritebackup                   " And again.
 set noswapfile                      " no swap files
 set incsearch                       " Highlight matches as you type.
 set hlsearch                        " Highlight matches.
+set clipboard=unnamed
 
 map <C-n> :NERDTreeToggle<CR>
 
