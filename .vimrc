@@ -7,14 +7,36 @@ set enc=utf-8
 
 let mapleader = ','
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
+nnoremap <leader><leader> <c-^>
 
 highlight clear SignColumn          " Fix vim-gitgutter background
 let g:ctrlp_show_hidden = 1         " Let ctrlp see hidden files
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](node_modules|.git|env|htmlcov)$',
+  \ 'dir':  '\v[\/](node_modules|.git|env|venv|htmlcov)$',
   \ 'file': '\v\.(pyc)$',
   \ }
+
+"
+"syntastic settings
 let g:syntastic_javascript_checkers = ['jshint', 'jscs']
+let g:syntastic_python_pylint_post_args='--disable=C0301'
+"
+"go-vim settings
+let g:go_fmt_command = "goimports"
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>d <Plug>(go-def)
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>e <Plug>(go-rename)
+au FileType go nmap <Leader>gr <Plug>(go-referrers)
+
 map <leader>f :CtrlP .<cr>
 map <leader>F :CtrlP %%<cr>
 map <leader>fp :call CtrlpProject()<cr>
@@ -43,6 +65,7 @@ set hlsearch                        " Highlight matches.
 set clipboard=unnamed
 
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.pyc$']
 
 
 vmap <Tab> >gv
