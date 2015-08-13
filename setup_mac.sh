@@ -38,5 +38,8 @@ brew install mysql 2> /dev/null
 # Start mysql
 mysql.server start
 
+# Install Sequel Pro
+brew cask install sequel-pro
+
 # Install redis
 brew install redis 2> /dev/null
