@@ -12,7 +12,7 @@ nnoremap <leader><leader> <c-^>
 highlight clear SignColumn          " Fix vim-gitgutter background
 let g:ctrlp_show_hidden = 1         " Let ctrlp see hidden files
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](node_modules|.git|env|venv|htmlcov)$',
+  \ 'dir':  '\v[\/](node_modules|.git|env|venv|htmlcov|docs|Godeps)$',
   \ 'file': '\v\.(pyc)$',
   \ }
 

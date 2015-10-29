@@ -31,6 +31,8 @@ declare -A vim_bundles=(
   ["vim-commentary"]="/tpope/vim-commentary"
   ["editorconfig-vim"]="/editorconfig/editorconfig-vim"
   ["vim-less"]="/groenewege/vim-less"
+  ["vim-fugitive"]="/tpope/vim-fugitive"
+  ["vim-instant-markdown"]="/suan/vim-instant-markdown"
 )
 
 # Install vim pathogen
